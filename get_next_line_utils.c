@@ -6,7 +6,7 @@
 /*   By: elsie <elsie@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/30 18:17:42 by elsie             #+#    #+#             */
-/*   Updated: 2022/09/30 18:46:43 by elsie            ###   ########.fr       */
+/*   Updated: 2022/09/30 19:09:39 by elsie            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,6 +52,8 @@ char	*ft_strjoin(char *s1, char *s2)
 	if (!s1 || !s2)
 		return (NULL);
 	res = malloc(sizeof(char) * (ft_strlen(s1) + ft_strlen(s2) + 1));
+	if (!res)
+		return (free(s1), NULL);
 	while (s1[++i])
 		res[i] = s1[i];
 	while (s2[j])

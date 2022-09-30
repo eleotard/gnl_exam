@@ -6,7 +6,7 @@
 /*   By: elsie <elsie@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/30 16:22:35 by elsie             #+#    #+#             */
-/*   Updated: 2022/09/30 18:48:48 by elsie            ###   ########.fr       */
+/*   Updated: 2022/09/30 19:10:22 by elsie            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -128,6 +128,8 @@ char	*get_next_line(int fd)
 		n = read(fd, buff, BUFFER_SIZE);
 		buff[n] = '\0';
 		next_line = ft_strjoin(next_line, buff);
+		if (!next_line)
+			return (NULL);
 	}
 	if (next_line[0] == '\0')
 		return (next_line = free_null(next_line), NULL);
